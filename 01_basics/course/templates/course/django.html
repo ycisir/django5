@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{name}}</title>
+</head>
+<body>
+	<h1>Django template language</h1>
+	<!-- 
+	upper, capfirst, lower, length:3, truncatewords:5, slice:3, 
+
+	date, time, date:'D d M Y', date:'SHORT_DATE_FORMAT', time: 'TIME_FORMAT',
+
+	floatformate, floatformate:3, 
+	-->
+	<h3>{{name|capfirst}}</h3>
+	<p>{{description}}</p>
+	<small>{{date|date:'SHORT_DATE_FORMAT'}}</small>
+	<br>
+	<span>{{p1}}, {{p2}}, {{p3}}</span>
+	<br>
+	<span>{{p1|floatformat}}, {{p2|floatformat}}, {{p3|floatformat}}</span>
+	<br>
+	<span>{{p1|floatformat:3}}, {{p2|floatformat:3}}, {{p3|floatformat:3}}</span>
+
+</body>
+</html>
