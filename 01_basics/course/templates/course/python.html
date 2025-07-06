@@ -1,4 +1,3 @@
-
 {% extends 'core/base.html' %}
 {% load static %}
 
@@ -10,12 +9,12 @@
 	<script src="{% static 'course/js/script.js' %}"></script>
 {% endblock custom_scripts %}
 
-{% block page_title %} learn django {% endblock page_title %}
+{% block page_title %} learn python {% endblock page_title %}
 
 {% block main_content %}
 
 	<div>
-		<img src="{% static 'course/images/django.png' %}" alt="django">
+		<img src="{% static 'course/images/python.png' %}" alt="python">
 
 		<h3>{{name|capfirst}}</h3>
 
@@ -25,7 +24,7 @@
 		
 	</div>
 
+
 {% endblock main_content %}
 
-{% block footer %} {{block.super}} | django footer {% endblock footer %}
-	
+{% block footer %} {{block.super}} | python footer {% endblock footer %}
