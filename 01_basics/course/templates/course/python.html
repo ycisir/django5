@@ -1,31 +1,10 @@
 {% extends 'core/base.html' %}
-{% load django_bootstrap5 %}
-{% load static %}
 
-{% block custom_css %}
-	<link rel="stylesheet" type="text/css" href="{% static 'course/css/style.css' %}">
-{% endblock custom_css %}
-
-{% block custom_scripts %}
-	<script src="{% static 'course/js/script.js' %}"></script>
-{% endblock custom_scripts %}
-
-{% block page_title %} learn python {% endblock page_title %}
+{% block page_title %} python {% endblock page_title %}
 
 {% block main_content %}
 
-	<div>
-		<img src="{% static 'course/images/python.png' %}" alt="python">
-
-		<h3>{{name|capfirst}}</h3>
-
-		<p>{{description}}</p>
-
-		{% bootstrap_button button_type="submit" content="enroll" onclick="disp()" %}
-
-	</div>
-
+	<h3>{{name|capfirst}}</h3>
+	<p>{{description}}</p>
 
 {% endblock main_content %}
-
-{% block footer %} {{block.super}} | python footer {% endblock footer %}
