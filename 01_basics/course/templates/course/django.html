@@ -1,6 +1,7 @@
 
 {% extends 'core/base.html' %}
 {% load static %}
+{% load django_bootstrap5 %}
 
 {% block custom_css %}
 	<link rel="stylesheet" type="text/css" href="{% static 'course/css/style.css' %}">
@@ -21,8 +22,8 @@
 
 		<p>{{description}}</p>
 
-		<button onclick="disp()">enroll</button>
-		
+		{% bootstrap_button button_type="submit" content="enroll" onclick="disp()" %}
+
 	</div>
 
 {% endblock main_content %}

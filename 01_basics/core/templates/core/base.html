@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 {% load static %}
+{% load django_bootstrap5 %}
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% bootstrap_css %}
+	{% bootstrap_javascript %}
 	{% block custom_css %} {% endblock custom_css %}
 
 	{% block custom_scripts %} {% endblock custom_scripts %}
@@ -16,6 +19,7 @@
 
 	{% block hero_section %} {% endblock hero_section %}
 
+	{% bootstrap_messages %}
 	{% block main_content %} {% endblock main_content %}
 
 	{% block footer %} base footer {% endblock footer %}
