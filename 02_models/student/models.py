@@ -5,5 +5,8 @@ class Profile(models.Model):
 	email = models.EmailField(max_length=50)
 	city = models.CharField(max_length=50)
 
-	def __str__(self):
-		return str(self.name)
+	class Meta:
+		ordering = ('id',)
+
+	# def __str__(self):
+	# 	return str(self.name)
