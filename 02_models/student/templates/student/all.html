@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>all students</title>
+</head>
+<body>
+
+	<h3>all students data</h3>
+
+	{% for student in students %}
+		<h5>Name: {{student.name}}</h5>
+		<h5>Email: {{student.email}}</h5>
+		<h5>City: {{student.city}}</h5>
+		<hr>
+	{% empty %}
+		<p>No data</p>
+	{% endfor %}
+
+</body>
+</html>
