@@ -10,8 +10,8 @@ def registration(request):
 
 
 def login(request):
-	form = Login()
-	# form = Login(auto_id='login_%s')
+	# form = Login()
+	form = Login(auto_id='login_%s')
 	# form = Login(auto_id=True)	# remove id_
 	# form = Login(auto_id=False) # without label tag
 	# field_order, label_suffix, initial={'name':'somevalue'}

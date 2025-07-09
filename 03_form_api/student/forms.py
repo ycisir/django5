@@ -8,5 +8,5 @@ class Registration(forms.Form):
 
 
 class Login(forms.Form):
-	email = forms.EmailField()
+	email = forms.EmailField(help_text="write your email")
 	password = forms.CharField()

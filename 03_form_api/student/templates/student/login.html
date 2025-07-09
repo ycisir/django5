@@ -9,9 +9,86 @@
 	<h3>student login page</h3>
 	<form method="">
 
-		{{form.as_p}}
+		<!-- {{form.as_p}} -->
+
+		
+
+		<!-- {{form.email.label_tag}} {{form.email}} <br>
+		{{form.password.label_tag}} {{form.password}} <br> -->
+
+		
+
+
+
+		<!-- <label for="{{form.email.id_for_label}}">{{form.email.label}}</label><br>
+		{{form.email}} <br>
+
+		<label for="{{form.password.id_for_label}}">{{form.password.label}}</label><br>
+		{{form.password}} <br> -->
+
+
+
+
+
+
+		<!-- <label for="{{form.email.id_for_label}}">Email: </label>
+		<input type="text" name="{{form.email.name}}" id="{{form.email.id_for_label}}" value="{{form.email.value|default:''}}" required>
+		{{form.email.help_text}}
+
+		<br>
+
+		<label for="{{form.password.id_for_label}}">Password: </label>
+		<input type="text" name="{{form.password.name}}" id="{{form.password.id_for_label}}" value="{{form.email.value|default:''}}" required> -->
+
+
+
+
+
+
+
+
+		<!-- {% for field in form %}
+			<div>
+				<label for="{{field.id_for_label}}">{{field.label}}: </label>
+
+				<input type="{{field.field.widget.input_type}}" name="{{field.name}}" id="{{field.id_for_label}}" value="{{field.value|default:''}}" placeholder="{{field.field.widget.attrs.placeholder|default:'test'}}" required>
+			</div>
+		{% endfor %} -->
+
+
+
+
+
+
+
+
+		{% for field in form.visible_fields %}
+			<div>
+				{{field.label_tag}}
+				{{field}}
+			</div>
+		{% endfor %}
+
+		{% for hidden in form.hidden_fields %}
+			<div>
+				{{hidden}}
+			</div>
+		{% endfor %}
+
+
+
+
+
 
 		<button>submit</button>
+
+		<!-- <div>
+			{{form.email.label}}
+			{{form.email.value}}
+			{{form.email.html_name}}
+			{{form.email.field.required}}
+			{{form.email.help_text}}
+		</div> -->
 	</form>
 </body>
 </html>
