@@ -10,22 +10,7 @@
 	<form method="post" novalidate>
 
 		{% csrf_token %}
-		
-
-		<!-- {{form.as_p}} -->
-
-
-		{{form.non_field_errors}}
-		
-		{% for field in form %}
-			<div>
-				{{field.label_tag}} {{field}}
-				{% for error in field.errors %}
-					<small style="color: red;">{{error}}</small>
-				{% endfor %}
-			</div>
-		{% endfor %}
-
+		{{form.as_p}}
 		<button type="submit">submit</button>
 
 	</form>
