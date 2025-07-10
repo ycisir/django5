@@ -7,20 +7,13 @@
 </head>
 <body>
 	<h3>student registration page</h3>
-	<form method="">
-		<!-- <table>
-			{{form.as_table}}
-		</table> -->
+	<form method="post" novalidate>
 
-		<!-- <ul>
-			{{form.as_ul}}
-		</ul> -->
-
-		<!-- {{form.first_name}} -->
-
+		{% csrf_token %}
 		{{form.as_p}}
 
-		<button>submit</button>
+		<button type="submit">submit</button>
+
 	</form>
 </body>
 </html>

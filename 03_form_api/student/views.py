@@ -1,26 +1,21 @@
 from django.shortcuts import render
-from student.forms import Registration, Login, DemoForm
+from student.forms import Register
+from django.http import HttpResponseRedirect
 
-def registration(request):
-	form = Registration()
-	context = {
-		'form': form,
-	}
-	return render(request, 'student/registration.html', context)
+def register(request):
+	
+	if request.method == 'POST':
+		form = Register(request.POST)
 
+		if form.is_valid():
+			print(form.cleaned_data)
+			# return HttpResponseRedirect('/student/success/')
+			return HttpResponseRedirect('/student/register/')
+	else:
+		form = Register()
 
-def login(request):
-	# form = Login()
-	form = Login(auto_id='login_%s')
-	# form = Login(auto_id=True)	# remove id_
-	# form = Login(auto_id=False) # without label tag
-	# field_order, label_suffix, initial={'name':'somevalue'}
-	context = {
-		'form': form,
-	}
-	return render(request, 'student/login.html', context)
+	return render(request, 'student/registration.html', {'form':form})
 
 
-def demo_form(request):
-	form = DemoForm()
-	return render(request, 'student/demo.html', {'form':form})
+def success(request):
+	return render(request, 'student/success.html')
