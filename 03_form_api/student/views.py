@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from student.forms import Registration, Login
+from student.forms import Registration, Login, DemoForm
 
 def registration(request):
 	form = Registration()
@@ -19,3 +19,8 @@ def login(request):
 		'form': form,
 	}
 	return render(request, 'student/login.html', context)
+
+
+def demo_form(request):
+	form = DemoForm()
+	return render(request, 'student/demo.html', {'form':form})
