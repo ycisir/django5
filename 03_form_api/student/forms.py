@@ -2,14 +2,14 @@ from django import forms
 from django.core import validators
 
 # custom validators
-def gmail_only(value):
-	if not value.split('@')[1] == 'gmail.com':
-		raise forms.ValidationError('gmail domain needed!')
+# def gmail_only(value):
+# 	if not value.split('@')[1] == 'gmail.com':
+# 		raise forms.ValidationError('gmail domain needed!')
 
-class Register(forms.Form):
-	name = forms.CharField(validators=[validators.MaxLengthValidator(10), validators.MinLengthValidator(4)])
-	email = forms.EmailField(validators=[gmail_only])
-	password = forms.CharField(widget=forms.PasswordInput())
+# class Register(forms.Form):
+# 	name = forms.CharField(validators=[validators.MaxLengthValidator(10), validators.MinLengthValidator(4)])
+# 	email = forms.EmailField(validators=[gmail_only])
+# 	password = forms.CharField(widget=forms.PasswordInput())
 
 
 	# single validation
@@ -38,3 +38,11 @@ class Register(forms.Form):
 	# 		self.add_error('email', 'Gmail domain needed!')
 
 	# 	return cleaned_data
+
+
+
+
+class Register(forms.Form):
+	name = forms.CharField(error_messages={'required': 'Name is required'}, validators=[validators.MaxLengthValidator(10), validators.MinLengthValidator(4)])
+	email = forms.EmailField(error_messages={'required': 'Email is required'})
+	password = forms.CharField(error_messages={'required': 'Password is required'}, widget=forms.PasswordInput())
